@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdlib> 
+using namespace std;
+int main() 
+{
+    int n, m,x1,y1,x2,y2, max=10000000*(-1), min=10000000;
+    cin>>n>>m;
+    int A[n][m];
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            cin>>A[i][j];
+        }
+    }
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            if(A[i][j]>max) {max=A[i][j];x1=i+1; y1=j+1;}
+            if(A[i][j]<min) {min=A[i][j];x2=i+1; y2=j+1;}
+        }
+    }
+    cout<<x2<<" "<<y2<<" "<<min<<endl;
+    cout<<x1<<" "<<y1<<" "<<max;
+}
